@@ -42,18 +42,18 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-  <div class="field", id="natesu">
+  <div class="field">
     <%= f.label :img_url %><br />
     <%= f.text_field :img_url, required: false %>
   </div>
 
   <div class="field">
-    <%= f.label :blurb %><br />
+    <%= f.label :blurb %><br/>
     <%= f.text_area :blurb, required: false %>
   </div>
 
   <div class="actions">
-    <%= link_to "Update", edit_user_registration_path, class: "btn waves-effect waves-light" %>
+    <%= f.submit "Update", class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
 

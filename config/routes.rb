@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
+  # put 'users', to: 'user/registrations#update', as: 'update_user_registraion'
+
   root :to          => 'pages#home'
   get '/about_us'   => 'pages#about_us'
   get '/people'     => 'pages#people'

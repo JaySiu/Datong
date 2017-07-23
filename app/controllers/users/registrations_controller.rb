@@ -6,6 +6,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # flash[:notice] = params[:new_img_url]
   end
   
+  def update
+    current_user.update_attributes(:img_url => params[:user][:img_url]) if params[:user][:img_url]
+    redirect_to edit_user_registration_path
+  end
+  
   protected
   
   def configure_sign_up_params
