@@ -8,6 +8,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def update
     current_user.update_attributes(:img_url => params[:user][:img_url]) if params[:user][:img_url]
+    current_user.update_attributes(:fname => params[:user][:fname]) if params[:user][:fname]
+    current_user.update_attributes(:lname => params[:user][:lname]) if params[:user][:lname]
     redirect_to edit_user_registration_path
   end
   
