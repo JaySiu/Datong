@@ -20,9 +20,14 @@ Then /^I should see (.*)$/ do |text|
   end
 end
 
-Given /^I have an account for (.*@.*) with password (.*)$/ do |email, password|
-  pending
-  #add entry for user: email, password
+Then /^I (dont )?have an account for (.*@.*) with password (.*)$/ do |dont, email, password|
+  step "I follow Log Out"
+  visit '/users/sign_in'
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
+  click_button "Log in"
+  step "I should be on the home page" if dont != "dont "
+  step "I should be on the sign in page" if dont == "dont "
 end
 
 Given /^I do not have an account$/ do
