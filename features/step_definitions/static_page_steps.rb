@@ -20,6 +20,21 @@ Then /^I should see (.*)$/ do |text|
   end
 end
 
+Given /^I made an account for (.*@.*) with password (.*)$/ do |email, password|
+  fname = 'Da'
+  lname = 'Tong'
+  email = email
+  password = password
+  User.new(:fname => fname, :lname => lname, :email => email, :password => password, :password_confirmation => password).save!
+  user = User.first
+  user.confirm
+  visit '/users/sign_in'
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
+  click_button "Log in"
+end
+
+
 Then /^I (dont )?have an account for (.*@.*) with password (.*)$/ do |dont, email, password|
   step "I follow Log Out"
   visit '/users/sign_in'
