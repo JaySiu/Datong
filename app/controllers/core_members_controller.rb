@@ -16,6 +16,8 @@ class CoreMembersController < ApplicationController
       @is_account_admin = true
     end
     @core_members = User.where(is_core_member: true).to_a
+    @event_admins = User.where(is_event_admin: true).to_a
+    @account_admins = User.where(is_account_admin: true).to_a
   end
 
   def edit_multiple

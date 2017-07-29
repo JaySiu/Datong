@@ -1,12 +1,13 @@
-<h2>Core Members</h2>
+<h2>People</h2>
 <% if @is_account_admin %>
   <%= link_to "Edit", edit_multiple_core_members_path %>
 <% end %>
+
 <table id="core_members">
   <thead>
   <tr>
     <th>
-      Current semester
+      Current Semester Core Members
     </th>
   </tr>
   </thead>
@@ -37,5 +38,73 @@
           </tr>
       <% end %>
   <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr><th>Current Semester Event Admins</th></tr>
+  </thead>
+  <tbody>
+    <% if @event_admins.empty? %>
+          <tr><td>It looks like there are no Event Admins yet!</td></tr>
+    <% else %>
+      <% @event_admins.each do |event_admin| %>
+        <tr>
+            <td>
+              <div class="row">
+                <div class="col s12 m10">
+                  <div class="card horizontal small">
+                    <div class="card-image">
+                      <%= image_tag(event_admin.img_url) %>
+                      <span class="card-title" style="background-color:rgba(0, 0, 0, 0.5);">
+                        <%= event_admin.fullname %>
+                      </span>
+                    </div>
+                    <div class="card-content col s10 m8">
+                      <div class="core-member-position"></div>
+                      <div class="core-member-blurb"><%= event_admin.blurb %></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr><th>Current Semester Account Admins</th></tr>
+  </thead>
+  <tbody>
+    <% if @account_admins.empty? %>
+          <tr><td>It looks like there are no Account Admins yet!</td></tr>
+    <% else %>
+      <% @account_admins.each do |account_admin| %>
+        <tr>
+            <td>
+              <div class="row">
+                <div class="col s12 m10">
+                  <div class="card horizontal small">
+                    <div class="card-image">
+                      <%= image_tag(account_admin.img_url) %>
+                      <span class="card-title" style="background-color:rgba(0, 0, 0, 0.5);">
+                        <%= account_admin.fullname %>
+                      </span>
+                    </div>
+                    <div class="card-content col s10 m8">
+                      <div class="core-member-position"></div>
+                      <div class="core-member-blurb"><%= account_admin.blurb %></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+      <% end %>
+    <% end %>
   </tbody>
 </table>
