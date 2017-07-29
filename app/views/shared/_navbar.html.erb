@@ -6,12 +6,12 @@
     <div class="nav-pages">
       <ul id="mobile-menu" class="side-nav">
         <li><%= link_to 'About Us', about_us_path %></li>
+        <li><%= link_to 'Contact', contact_us_path %></li>
         <li><%= link_to 'People', core_members_index_path %></li>
         <% if user_signed_in? %>
             <li><%= link_to 'Resources', resources_path %></li>
         <% end %>
         <li><%= link_to 'Events', events_path %></li>
-        <li><%= link_to 'Contact', contact_us_path %></li>
         <% if user_signed_in? %>
             <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>

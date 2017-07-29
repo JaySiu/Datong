@@ -10,11 +10,11 @@ function carousel() {
     var i;
     var x = document.getElementsByClassName("mainpictures");
     for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none"; 
+      x[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1} 
-    x[slideIndex-1].style.display = "block"; 
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].style.display = "block";
     setTimeout(carousel, 4000); // Change image every 2 seconds
 }
 
@@ -49,3 +49,8 @@ function carousel() {
 <div id="bottom-bar">
     <span id="bottom-bar-text">Hosted by OCF. Sponsored by <a href=http://ieas.berkeley.edu/ccs/>Center for Chinese Studies</a></span>
 </div>
+
+<!-- "../../assets/images/ShanghaiBund.jpg",
+       "../../assets/images/NationalGrandTheatre.jpg",
+       "../../assets/images/TheForbiddenCity.jpg",
+       "../../assets/images/GreatWall.jpg" -->
