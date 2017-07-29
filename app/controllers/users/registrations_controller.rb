@@ -6,14 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
     # flash[:notice] = params[:new_img_url]
   end
-<<<<<<< HEAD
-  
-  def update
-    current_user.update_attributes(:img_url => params[:user][:img_url]) if params[:user][:img_url]
-    redirect_to edit_user_registration_path
-  end
-  
-=======
 
   def update
     if current_user.is_core_member
@@ -37,7 +29,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #  return "your input(s) for changing password is(are) invalid"
   #end
 
->>>>>>> c24d7d9bb170d9bfdafed0114410268163ec7712
   protected
   
   def configure_sign_up_params
