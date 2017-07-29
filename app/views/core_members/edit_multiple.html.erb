@@ -28,11 +28,11 @@
             <td><%= user.email %></td>
             <td>
               <%= check_box_tag user.fname, user.id, user.is_core_member, name: "core_mem[]" %>
-              <%= label_tag user.fname, "" %>
+              <%= label_tag user.fname, "core" %>
             </td>
             <td>
               <%= check_box_tag user.lname, user.id, user.is_event_admin, name: "event_ad[]" %>
-              <%= label_tag user.lname, "" %>
+              <%= label_tag user.lname, "event" %>
             </td>
           </tr>
       <% end %>
