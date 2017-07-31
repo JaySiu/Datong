@@ -17,10 +17,8 @@
    <tbody>
    <% if @resources.nil? or @resources.empty? %>
        <tr><td>There are no resources uploaded currently.</tr></td>
-
    <% else %>
       <% @resources.each do |resource| %>
-         
          <tr>
             <td><%= resource.title %></td>
             <td><%= link_to "Download Resource", resource, method: :get %></td>
@@ -28,7 +26,6 @@
               <td><%= button_to "Delete", resource, method: :delete, confirm: "Are you sure that you wish to delete #{resource.title}?", class: "btn btn-danger" %></td>
             <%end%>
          </tr>
-         
       <% end %>
    <%end%>
    </tbody>
