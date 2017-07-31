@@ -25,10 +25,6 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-<<<<<<< HEAD
-    
-=======
->>>>>>> debug-resource-upload
     if @resource.save
       flash[:notice] = "The resource #{@resource.title} has been uploaded."
       redirect_to resources_path#, notice: 
