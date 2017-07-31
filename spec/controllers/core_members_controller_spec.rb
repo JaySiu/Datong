@@ -99,7 +99,7 @@ describe CoreMembersController, type: :controller do
     end
     it "assigns core_members" do
       sign_in(@account_admin)
-      put :update_multiple, :user_ids => [@user1.id]
+      put :update_multiple, :core_mem => [@user1.id]
       assigns(:core_members).should eq(["#{@user1.id}"])
       @user1.reload
       @user1.is_core_member.should be_truthy
@@ -109,7 +109,7 @@ describe CoreMembersController, type: :controller do
     it "correctly updates one user" do
       sign_in(@account_admin)
 
-      put :update_multiple, :user_ids => [@user1.id]
+      put :update_multiple, :core_mem => [@user1.id]
       @user1.reload
       @user1.is_core_member.should be_truthy
       @user2.reload
@@ -118,12 +118,12 @@ describe CoreMembersController, type: :controller do
     it "correctly updates unchecks" do
       sign_in(@account_admin)
 
-      put :update_multiple, :user_ids => [@user1.id]
+      put :update_multiple, :core_mem => [@user1.id]
       @user1.reload
       @user1.is_core_member.should be_truthy
       @user2.reload
       @user2.is_core_member.should be_falsey
-      put :update_multiple, :user_ids => []
+      put :update_multiple, :core_mem => []
       @user1.reload
       @user1.is_core_member.should be_falsey
       @user2.reload
@@ -132,7 +132,7 @@ describe CoreMembersController, type: :controller do
     it "redirects to index" do
       sign_in(@account_admin)
 
-      put :update_multiple, :user_ids => [@user2.id]
+      put :update_multiple, :core_mem => [@user2.id]
       expect(response).to redirect_to(core_members_index_path)
     end
   end
