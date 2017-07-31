@@ -1,11 +1,9 @@
-
 <br />
 <% if @core_member %>
   <%= link_to "Upload Resource", new_resource_path, class: "btn btn-primary", id: "upload" %>
 <% end %>
 <br />
 <br />
-
 
 <table class = "table table-bordered table-striped">
    <thead>
@@ -19,10 +17,8 @@
    <tbody>
    <% if @resources.nil? or @resources.empty? %>
        <tr><td>There are no resources uploaded currently.</tr></td>
-
    <% else %>
       <% @resources.each do |resource| %>
-         
          <tr>
             <td><%= resource.title %></td>
             <td><%= link_to "Download Resource", resource.attachment_url %></td>
@@ -30,7 +26,6 @@
               <td><%= button_to "Delete",  resource, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.title}?" %></td>
             <%end%>
          </tr>
-         
       <% end %>
    <%end%>
    </tbody>

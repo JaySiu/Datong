@@ -25,11 +25,16 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
+<<<<<<< HEAD
     
+=======
+>>>>>>> debug-resource-upload
     if @resource.save
       flash[:notice] = "The resource #{@resource.title} has been uploaded."
       redirect_to resources_path#, notice: 
     else
+      # flash[:notice] = "You need a Title and an Attachment"
+      # redirect_to new_resource_path
       render "new"
     end
   end
@@ -41,8 +46,12 @@ class ResourcesController < ApplicationController
     redirect_to resources_path#, notice: "The resource #{@resource.name} has been deleted."
   end
   
-  private
+  def show
+    @attachment= Resource.find(params[:id])
+    send_data @attachment.file_contents, :filename => @attachment.attachment, :type => @attachment.file_type
+  end
   
+  private
   def resource_params
     params.require(:resource).permit(:title, :attachment)
   end

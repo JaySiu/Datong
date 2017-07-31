@@ -1,4 +1,4 @@
-<h2>Edit core members</h2>
+<h2>Edit Membership</h2>
 
 <%= form_tag update_multiple_core_members_path, :method => :put do %>
 <table id="core_members">
@@ -11,7 +11,10 @@
       Email
     </th>
     <th>
-      Core member?
+      Core Member
+    </th>
+    <th>
+      Event Admin
     </th>
   </tr>
   </thead>
@@ -24,8 +27,12 @@
             <td><%= user.fullname %></td>
             <td><%= user.email %></td>
             <td>
-              <%= check_box_tag user.id, user.id, user.is_core_member, name: "user_ids[]" %>
-              <%= label_tag user.id, "" %>
+              <%= check_box_tag user.fname, user.id, user.is_core_member, name: "core_mem[]" %>
+              <%= label_tag user.fname, "core" %>
+            </td>
+            <td>
+              <%= check_box_tag user.lname, user.id, user.is_event_admin, name: "event_ad[]" %>
+              <%= label_tag user.lname, "event" %>
             </td>
           </tr>
       <% end %>
@@ -35,3 +42,6 @@
 <%= submit_tag 'Update', class: "btn waves-effect waves-light" %>
 <%= link_to 'Cancel', core_members_index_path, class: "btn waves-light waves-effect", style:"margin-left:1em;" %>
 <% end %>
+
+<br>
+<br>
