@@ -21,7 +21,7 @@
       <% @resources.each do |resource| %>
          <tr>
             <td><%= resource.title %></td>
-            <td><%= link_to "Download Resource", resource.attachment_url %></td>
+            <td><%= link_to "Download Resource", resource, method: :get %></td>
             <% if @core_member %>
               <td><%= button_to "Delete",  resource, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.title}?" %></td>
             <%end%>
