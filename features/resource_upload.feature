@@ -16,20 +16,20 @@ Feature: When I visit the resources page as a core member, I would like to updat
     Then I should see Resource1
     
   Scenario: deleting resource as core member correctly
-      Given The "Resource1" file exists
-      And I am on the resources page
-      And I am a core member
-      When I press "Delete" 
-      Then I should see The resource Resource1 has been deleted.
-      And I should see There are no resources uploaded currently
+    Given The "Resource1" file exists
+    And I am on the resources page
+    And I am a core member
+    When I press "Delete" 
+    Then I should see The resource Resource1 has been deleted.
+    And I should see There are no resources uploaded currently
     
   Scenario: uploading resource as core member incorrectly without title
-      Given I am a core member
-      And I am on the resources page
-      When I follow upload
-      And I upload "test_file.txt"
-      When I press "Save"
-      Then I should see Title can't be blank
+    Given I am a core member
+    And I am on the resources page
+    When I follow upload
+    And I upload "test_file.txt"
+    When I press "Save"
+    Then I should see Title can't be blank
     
   Scenario: uploading resource as core member incorrectly without attachment
     Given I am on the resources page
@@ -40,10 +40,10 @@ Feature: When I visit the resources page as a core member, I would like to updat
     Then I should see Attachment can't be blank
   
   Scenario: downloading resource as logged in member
-      Given The "Resource1" file exists
-      And I am on the resources page
-      And I am logged in
-      Then I should see Download Resource
+    Given The "Resource1" file exists
+    And I am on the resources page
+    And I am logged in
+    Then I should see Download Resource
     
   Scenario: not seeing resource in navbar as visitor
     Given I am on the home page
