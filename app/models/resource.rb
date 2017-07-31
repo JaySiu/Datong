@@ -7,6 +7,7 @@ class Resource < ActiveRecord::Base
       super
       if incoming_file["attachment"] && incoming_file["title"]
         self.title = incoming_file["title"]
+        self.file_type = incoming_file["attachment"].content_type
         self.attachment = sanitize_filename(incoming_file["attachment"].original_filename)
         self.file_contents = incoming_file["attachment"].read
       end

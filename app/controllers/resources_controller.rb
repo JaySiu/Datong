@@ -44,7 +44,7 @@ class ResourcesController < ApplicationController
   
   def show
     @attachment= Resource.find(params[:id])
-    send_data @attachment.file_contents, :filename => @attachment.title
+    send_data @attachment.file_contents, :filename => @attachment.attachment, :type => @attachment.file_type
   end
   
   private
