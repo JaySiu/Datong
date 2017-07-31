@@ -24,15 +24,10 @@ class CoreMembersController < ApplicationController
 
   def update_multiple
     @core_members = params[:core_mem]
-    @event_admins = params[:event_ad]
     reset_is_core_member
-    reset_is_event_admin
     if !@core_members.nil? && !@core_members.empty?
       set_is_core_member(@core_members)
     end
-    if !@event_admins.nil? && !@event_admins.empty?
-      set_is_event_admin(@event_admins)
-    end 
     flash[:success] = 'Success! Member Permissions updated.'
     redirect_to core_members_index_path
   end
