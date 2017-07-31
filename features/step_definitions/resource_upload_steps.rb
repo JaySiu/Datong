@@ -15,7 +15,7 @@ And /^(?:|I )upload "(.*)"$/ do |filename|
 end
 
 And /^The "(.*)" file exists$/ do |filename|
-  test_file = fixture_file_upload('features/testfiles/test_file.txt', 'text', false)
+  test_file = fixture_file_upload('features/testfiles/test_file.txt', 'text', true)
   Resource.new(:title => filename, :attachment => test_file).save!
 end
 
