@@ -25,13 +25,13 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    # @resource.uploaded_file = resource_params
     if @resource.save
       flash[:notice] = "The resource #{@resource.title} has been uploaded."
       redirect_to resources_path#, notice: 
     else
-      flash[:notice] = "You need a Title and an Attachment"
-      redirect_to new_resource_path
+      # flash[:notice] = "You need a Title and an Attachment"
+      # redirect_to new_resource_path
+      render "new"
     end
   end
 
@@ -48,7 +48,6 @@ class ResourcesController < ApplicationController
   end
   
   private
-  
   def resource_params
     params.require(:resource).permit(:title, :attachment)
   end
