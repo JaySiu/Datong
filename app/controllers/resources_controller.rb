@@ -30,7 +30,8 @@ class ResourcesController < ApplicationController
       flash[:notice] = "The resource #{@resource.title} has been uploaded."
       redirect_to resources_path#, notice: 
     else
-      render "new"
+      flash[:notice] = "You need a Title and an Attachment"
+      redirect_to new_resource_path
     end
   end
 
