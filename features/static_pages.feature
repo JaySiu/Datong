@@ -18,7 +18,8 @@ Feature: When I visit a static page, its content should match its counterpart on
     Given I am on the home page
     When I follow Events
     Then I should see Upcoming Events
-  
+    And I am on the events page
+
   Scenario: visiting the resources page
     Given I am on the home page
     And I am logged in
