@@ -24,7 +24,7 @@
 
 <div id="calendar"></div>
 
-
+<br>
 <% if @upcoming_events.empty? %>
     <hr>
     <tr><td>More events coming!</td></tr>
@@ -37,7 +37,7 @@
     <hr>
     <tr><td>No old events!</td></tr>
 <% else %>
-    <%= render partial: "table", locals: {events: @old_events}%>>
+    <%= render partial: "table", locals: {events: @old_events}%>
 <% end %>
 
 
