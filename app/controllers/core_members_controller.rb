@@ -16,6 +16,7 @@ class CoreMembersController < ApplicationController
       @is_account_admin = true
     end
     @core_members = User.where(is_core_member: true).to_a
+    @core_members.rotate(-1)
   end
 
   def edit_multiple
