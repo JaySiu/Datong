@@ -21,7 +21,7 @@ class CoreMembersController < ApplicationController
   end
 
   def edit_multiple
-    @users = User.order('email asc').all
+    @users = (User.where(is_account_admin: true).to_a << User.order('email asc').where(is_account_admin: false).to_a).flatten!
   end
 
   def update_multiple

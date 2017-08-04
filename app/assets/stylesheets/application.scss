@@ -206,6 +206,10 @@ html{
   transform: translateY(-50%);
 }
 
+.admin_highlight{
+  color: red;
+}
+
 .column-left{ float: left; width: 35%; padding-left: 10%;margin-left: 0px;}
 .column-right{ float: right; width: 35%; padding-left: 5%;}
 .column-center{ display: inline-block; width: 30%; padding-left: 5%;}
