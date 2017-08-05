@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :fname, presence: true
   validates :lname, presence: true
   
+  validates :img_url, presence: true
+  validates :blurb, presence: true
+  
   def fullname
     return fname + ' ' + lname
   end
