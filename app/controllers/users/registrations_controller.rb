@@ -8,18 +8,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    # if current_user.is_core_member
-    permitted = update_params
-    current_user.update_attributes(permitted)
-    # end
+    current_user.update_attributes(user_params)
     if params[:user][:current_password] && current_user.valid_password?(params[:user][:current_password]) && params[:user][:password] && params[:user][:password_confirmation] && params[:user][:password_confirmation] == params[:user][:password]
       current_user.update_attributes(:password => params[:user][:password])
       current_user.update_attributes(:password_confirmation => params[:user][:password_confirmation])
     #elsif !(params[:user][:current_password].nil?) && (params[:user][:password].nil?) && !(params[:user][:password_confirmation].nil?)
     end
-    current_user.update_attributes(:fname => params[:user][:fname]) if params[:user][:fname]
-    current_user.update_attributes(:lname => params[:user][:lname]) if params[:user][:lname]
-    current_user.update_attributes(:email => params[:user][:email]) if params[:user][:email]
     redirect_to edit_user_registration_path
   end
 
@@ -39,8 +33,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   private
-  def update_params
-    params.require(:user).permit(:img_url, :blurb)
+  def user_params
+    params.require(:user).permit(:img_url, :blurb, :fname, :lname, :email)
   end
   
 end

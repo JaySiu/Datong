@@ -14,5 +14,4 @@ class User < ActiveRecord::Base
     return fname + ' ' + lname
   end
 
-
 end
