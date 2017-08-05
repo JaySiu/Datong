@@ -16,8 +16,8 @@
 
 
 @import "materialize/components/color";
-$beaver: #9A846D;
-$bison-hide: #B8A692;
+$beaver: #999999;
+$bison-hide: #999999;
 $coffee: #78644F;
 $primary-color: $beaver !default;
 $secondary-color: $bison-hide !default;
@@ -36,26 +36,35 @@ $sidenav-item-height: 2em !default;
 
 nav {
   @media only screen and (min-width: 0) {
-    height: 3em;
-    .nav-wrapper {
-      padding: .7em 1em 0 1em;
-    }
+    height: 9em;
   }
-  @media only screen and (min-width: $medium-screen) {
-    height: 500px;
-    .nav-wrapper {
-      padding: 0em 1em 0 1em;
-      height: 64px;
-      position: fixed;
-      background-color: rgba(60,63,65,0.22);
-      width: 100%;
-    }
-  }
+
 }
 
-nav {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/a2/PudongSkyline-pjt.jpg");
-  background-size: cover;
+#title {
+  position:absolute;
+  left:40px;
+  top:30px;
+  width:290px;
+  height:34px;
+  font-family:'Baskerville-SemiBold', 'Baskerville SemiBold', 'Baskerville';
+  font-weight:650;
+  font-style:normal;
+  font-size:30px;
+  color: #666666;
+}
+
+#sub-title {
+  position:absolute;
+  left:40px;
+  top:64px;
+  width:302px;
+  height:12px;
+  font-family:'EngraversMT', 'Engravers MT';
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+  color: #666666;
 }
 
 .navbar-non-link {
@@ -70,10 +79,16 @@ nav {
 .nav-pages {
   position: absolute;
   right: 0;
+  top:50px;
+  height:26px;
+  font-family:'BellMT', 'Bell MT';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
 }
 
 .side-nav {
-  width: 500px;
+  width:500px;
 }
 
 html{
@@ -90,10 +105,6 @@ html{
   @media only screen and (min-width: $large-screen) {
     font-size: .8em;
   }
-
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  color: $off-black;
 }
 .alert {
   border-radius: 3px;
@@ -213,3 +224,87 @@ html{
 #bottom-bar {position: fixed; z-index: 100; bottom: 0; left: 0; width: 100%; height:40px; background-color: $secondary-color; color: white; text-align:center; line-height:40px;}
 #bottom-bar-text{display:inline-block; vertical-align:middle; line-height:normal;}
 .column-container{margin-top: 10px;padding-left:0%; margin-left: 0px;margin-right:0px;}
+
+#title-spirit {
+  top:720px;
+}
+
+#title-left {
+  position:absolute;
+  left:372px;
+  width:200px;
+  height:1px;
+}
+
+#title-center {
+  position:absolute;
+  margin-top:-12px;
+  left:582px;
+  width:228px;
+  height:20px;
+  font-family:'CourierNewPS-BoldMT', 'Courier New Bold', 'Courier New';
+  font-weight:700;
+  font-style:normal;
+  font-size:18px;
+  color:#797979;
+}
+
+#title-right {
+  position:absolute;
+  left:820px;
+  width:200px;
+  height:1px;
+}
+
+.spirit-content{
+  position:relative;
+  width:50px;
+  height:333px;
+  float:left;
+}
+
+.spirit-subtitle {
+  position:relative;
+  top:196px;
+  width:40px;
+  height:114px;
+}
+
+#spirit {
+  position:absolute;
+  top:837px;
+}
+
+#spirit-left {
+  position:relative;
+  left:63px;
+  float:left;
+}
+
+#spirit-center {
+  position:relative;
+  left:123px;
+  float:left;
+}
+
+#spirit-right {
+  position:relative;
+  left:163px;
+  float:left;
+}
+
+#spirit-title p {
+  position:relative;
+  font-family:'BellMT', 'Bell MT';
+  font-weight:400;
+  font-size:28px;
+  left:791px;
+  margin-top:-20px;
+}
+
+#spirit-title img {
+  position:relative;
+  left:783px;
+  width:545px;
+  height:93px;
+}
