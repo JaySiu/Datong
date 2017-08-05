@@ -4,7 +4,7 @@ Feature: When I visit the events page, I should see all the events
   When I visit the events page
   And I am logged in
   I should also be able to add/delete events
-
+  
   Scenario:
     Given I am an event admin
     And I am on the events page
@@ -12,7 +12,8 @@ Feature: When I visit the events page, I should see all the events
     Then I should see New Event
 
   Scenario: visiting the events page
-    Given I am on the events page
+    Given I am on the home page
+    When I follow Events
     Then I should see Upcoming Events
     And I should see Past Events
     And the page should have a div#calendar element
