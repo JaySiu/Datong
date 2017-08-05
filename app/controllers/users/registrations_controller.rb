@@ -8,12 +8,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def update
-    # puts params
-    # puts params
-    if current_user.is_core_member
-      current_user.update_attributes(update_params)
-    end
-    #debugger
+    # if current_user.is_core_member
+    permitted = update_params
+    current_user.update_attributes(permitted)
+    # end
     if params[:user][:current_password] && current_user.valid_password?(params[:user][:current_password]) && params[:user][:password] && params[:user][:password_confirmation] && params[:user][:password_confirmation] == params[:user][:password]
       current_user.update_attributes(:password => params[:user][:password])
       current_user.update_attributes(:password_confirmation => params[:user][:password_confirmation])
@@ -42,7 +40,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   private
   def update_params
-    permitted = params.require(:user).permit(:img_url, :blurb)
+    params.require(:user).permit(:img_url, :blurb)
   end
   
 end
