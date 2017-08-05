@@ -80,6 +80,7 @@ describe 'EventsController', type: :controller do
     it 'properly renders' do
       get :index
       expect(response).to render_template(:index)
+      expect(response).to have_http_status(:success)
     end
 
     it '@event_admin is false if not a event admin' do

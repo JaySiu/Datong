@@ -14,7 +14,7 @@ Feature: When I visit the events page, I should see all the events
   Scenario: visiting the events page
     Given I am on the home page
     When I follow Events
-    Then I should see Upcoming Events
+    Then I should be on the events page
     And I should see Past Events
     And the page should have a div#calendar element
     And I should not see New Event

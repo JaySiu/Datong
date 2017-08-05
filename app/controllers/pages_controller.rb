@@ -12,9 +12,9 @@ class PagesController < ApplicationController
     render 'pages/people'
   end
 
-  def events
-    render 'pages/events'
-  end
+  # def events
+    # render 'pages/events'
+  # end
 
   def contact_us
     render 'pages/contact_us'

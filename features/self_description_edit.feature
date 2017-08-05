@@ -18,17 +18,11 @@ Scenario: account admin cannot update blurb
   And I am on the home page
   When I follow Edit profile
   Then I should be on the edit profile page
-  When I fill in "Blurb" with "Testing"
-  And I press "Update"
-  Then I should be on the edit profile page
-  And I should not see Testing
+  And I should not see "Blurb"
   
 Scenario: event admin cannot update blurb
   Given I am an event admin
   And I am on the home page
   When I follow Edit profile
   Then I should be on the edit profile page
-  When I fill in "Blurb" with "Testing"
-  And I press "Update"
-  Then I should be on the edit profile page
-  And I should not see Testing
+  And I should not see "Blurb"
