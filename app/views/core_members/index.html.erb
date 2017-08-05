@@ -1,5 +1,5 @@
 <% if @is_account_admin %>
-  <%= link_to "Edit", edit_multiple_core_members_path %>
+  <%= link_to "Edit", edit_multiple_core_members_path, :class => "link_style"%>
 <% end %>
 <h2>Core Members</h2>
 <table id="core_members">
@@ -21,8 +21,8 @@
                   <div class="card horizontal small">
                     <div class="card-image">
                       <%= image_tag(core_member.img_url) %>
-                      <span class="card-title" style="background-color:rgba(0, 0, 0, 0.5);">
-                        <%= core_member.fullname %>
+                      <span class="card-title " style="background-color:rgba(0, 0, 0, 0.5);">
+                        <div class="<%= 'admin_highlight' if core_member.is_account_admin %>"><%= core_member.fullname %></div>
                       </span>
                     </div>
                     <div class="card-content col s10 m8">

@@ -13,6 +13,9 @@
     <th>
       Core Member
     </th>
+    <th>
+      Event Admin
+    </th>
   </tr>
   </thead>
   <tbody>
@@ -20,12 +23,16 @@
       <tr><td>It looks like there are no users yet!</td></tr>
   <% else %>
       <% @users.each do |user| %>
-          <tr>
+          <tr class="<%= 'admin_highlight' if user.is_account_admin %>">
             <td><%= user.fullname %></td>
             <td><%= user.email %></td>
             <td>
-              <%= check_box_tag user.id, user.id, user.is_core_member, name: "core_mem[]" %>
-              <%= label_tag user.id, "" %>
+              <%= check_box_tag user.fname, user.id, user.is_core_member, name: "core_mem[]" %>
+              <%= label_tag user.fname, "core" %>
+            <td>
+              <%= check_box_tag user.lname, user.id, user.is_event_admin, name: "event_ad[]" %>
+              <%= label_tag user.lname, "event" %>
+            </td>
           </tr>
       <% end %>
   <% end %>
