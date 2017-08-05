@@ -42,3 +42,8 @@ Scenario: visitors cannot update their profile picture
   Given I am on the home page
   And I am a visitor
   Then I should not see Edit profile
+  
+Scenario: admin can update their profile picture
+  Given I am on the home page
+  And I am a admin
+  Then I should see Edit profile

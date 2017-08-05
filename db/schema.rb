@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20170731041909) do
     t.string   "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.binary   "file_contents"
     t.string   "file_type"
+    t.binary   "file_contents"
   end
 
   create_table "users", force: :cascade do |t|
