@@ -209,13 +209,64 @@ html{
   float: right;
   font-size: 200%;
 }
-
+#Photo {
+  position:absolute;
+  left:0px;
+  top:110px;
+  width:1410px;
+  height:530px;
+}
+.Photo-img {
+  width:1410px;
+  height:530px;
+}
+#Photo p{
+  position:absolute;
+  left: 20px;
+  top:464px;
+  width:682px;
+  height:31px;
+  opacity:0.800000011920929;
+  font-family:'BellMT', 'Bell MT';
+  font-weight:400;
+  font-style:normal;
+  font-size:24px;
+  color:#F2F2F2;
+}
+.Photo-bgd {
+  position:absolute;
+  left:0px;
+  top:470px;
+  width:1410px;
+  height:60px;
+  opacity:0.5;
+}
+#helper {
+  position:absolute;
+  left:642px;
+  top:570px;
+  width:107px;
+  height:20px;
+}
+#helper img{
+  width:15px;
+  height:15px;
+}
+#dot-1 {
+  position:absolute;
+  left:0px;
+}
+#dot-2 {
+  position:absolute;
+  left:45px;
+}
+#dot-3 {
+  position:absolute;
+  left:91px;
+}
 .imageRotation{
   position: relative;
-  left:136px;
-  top:200px;
-  width:1170px;
-  height:510px;
+  width:1410px;
   overflow:hidden;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
@@ -223,66 +274,70 @@ html{
 
 .imageBox{
     position:absolute;
-    width:1170px;
-    height:510px;
-    top:0px;
+    width:1410px;
+    height:530px;
     left:0px;
+    top:110px;
     overflow:hidden;
 }
 .imageBox img {
     display:block;
-    width:1170px;
-    height:510px;
+    width:1410px;
+    height:530px;
     float:left;
     border:none;
 }
 
 .icoBox{
   position:absolute;
-  left:1178px;
-  top:452px;
-  width:90px;
-  height:28px;
+  left:642px;
+  top:570px;
+  width:107px;
+  height:20px;
   overflow:hidden;
-  background-color: #CCCCCC;
-    text-align:center;
-    line-height:40px;
-    z-index:2;
+  text-align:center;
+  z-index:2;
 }
 .icoBox span{
     float:left;
-    height:12px;
-    width:12px;
-    margin-left:3px;
+    height:15px;
+    width:45px;
     overflow:hidden;
-    background:url("images/home/u130.png") no-repeat;
+    background:url("images/home/dot-unselected.png") no-repeat;
     cursor:pointer;
 }
 .icoBox span.active {
-    background:url("images/home/u128.png") no-repeat;
+    float:left;
+    height:15px;
+    width:45px;
+    overflow:hidden;
+    background:url("images/home/dot-selected.png") no-repeat;
     cursor:default;
 }
 
 .titleBox{
     position:absolute;
     bottom:0px;
-    width:1170px;
-    height:40px;
+    width:1410px;
+    height:60px;
     overflow:hidden;
     }
 .titleBox p{
     position:absolute;
+    left: 20px;
+    top:464px;
+    width:682px;
+    height:31px;
+    opacity:0.800000011920929;
+    font-family:'BellMT', 'Bell MT';
+    font-weight:400;
+    font-style:normal;
+    font-size:24px;
+    color:#F2F2F2;
     bottom:-40px;
-    width:1170px;
-    height:40px;
-    margin:0px;
     padding:0px 10px;
-    line-height:40px;
     z-index:1;
     background-color:#000;
-    color:#fff;
-    font-family:"微软雅黑","yahei";
-    opacity:0.5;
     -moz-opacity:0.5;
     -webkit-opacity:0.5;
     filter:alpha(opacity=50);
