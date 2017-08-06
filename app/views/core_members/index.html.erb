@@ -1,5 +1,7 @@
 <% if @is_account_admin %>
-  <%= link_to "Edit", edit_multiple_core_members_path, :class => "link_style"%>
+  <span class = "link_style">
+      <%= link_to "Edit Members", edit_multiple_core_members_path, class: "btn waves-effect waves-light"%>
+  </span>
 <% end %>
 <h2>Core Members</h2>
 <table id="core_members">

@@ -27,9 +27,8 @@ describe '.people' do
 end
 
 describe '.events' do
-  it 'stub appears' do
+  it 'page appears' do
     visit '/events'
-
     expect(page).to have_content("Upcoming Events")
   end
 end
