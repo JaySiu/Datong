@@ -9,7 +9,7 @@ Scenario: core members can update their profile picture
   When I follow Edit profile
   Then I should be on the edit profile page
   And I should see Edit User
-  And I should see Cancel my account
+  And I should see Delete my account
   Then I fill in "Img url" with "http://www.freeiconspng.com/uploads/login-icon-png-27.png"
   And I press "Update"
   Then I should have the profile picture "http://www.freeiconspng.com/uploads/login-icon-png-27.png"
@@ -21,7 +21,7 @@ Scenario: profile picture is not updated if empty
   When I follow Edit profile
   Then I should be on the edit profile page
   And I should see Edit User
-  And I should see Cancel my account
+  And I should see Delete my account
   Then I fill in "Img url" with ""
   And I press "Update"
   Then I should have the profile picture "http://www.freeiconspng.com/uploads/profile-picture-icon-png-people-person-profile--4.png"
@@ -33,7 +33,7 @@ Scenario: event admin cannot update their profile picture
   When I follow Edit profile
   Then I should be on the edit profile page
   And I should see Edit User
-  And I should see Cancel my account
+  And I should see Delete my account
   And I should not see "Img url"
 
 Scenario: account admin cannot update their profile picture
@@ -43,7 +43,7 @@ Scenario: account admin cannot update their profile picture
   When I follow Edit profile
   Then I should be on the edit profile page
   And I should see Edit User
-  And I should see Cancel my account
+  And I should see Delete my account
   And I should not see "Img url"
   
 Scenario: admin can update their profile picture
