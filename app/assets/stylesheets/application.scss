@@ -211,17 +211,17 @@ html{
 .imageRotation{
   position: relative;
   width:1410px;
-  overflow:hidden;
+  height:530px;
+  position:relative;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
 }
-
 .imageBox{
     position:absolute;
     width:1410px;
     height:530px;
+    top:0px;
     left:0px;
-    top:110px;
     overflow:hidden;
 }
 .imageBox img {
@@ -231,15 +231,15 @@ html{
     float:left;
     border:none;
 }
-
 .icoBox{
   position:absolute;
   left:642px;
   top:570px;
-  width:107px;
+  width:135px;
   height:20px;
   overflow:hidden;
-  text-align:center;
+  text-align:left;
+  line-height:15px;
   z-index:2;
 }
 .icoBox span{
@@ -247,41 +247,35 @@ html{
     height:15px;
     width:45px;
     overflow:hidden;
-    background:url("images/home/dot-unselected.png") no-repeat;
     cursor:pointer;
 }
 .icoBox span.active {
-    float:left;
-    height:15px;
-    width:45px;
-    overflow:hidden;
-    background:url("images/home/dot-selected.png") no-repeat;
+    opacity: 0;
     cursor:default;
 }
-
 .titleBox{
-    position:absolute;
+    position:absolute;  
     bottom:0px;
     width:1410px;
     height:60px;
     overflow:hidden;
     }
 .titleBox p{
-    position:absolute;
-    left: 20px;
-    top:464px;
-    width:682px;
-    height:31px;
-    opacity:0.800000011920929;
+    position:absolute; 
+    bottom:-60px;
+    width:1410px;
+    height:60px;
+    margin:0px;
+    padding:0px 10px;
+    line-height:60px;
+    z-index:1;
+    background-color:#000;
+    color:#F2F2F2;
     font-family:'BellMT', 'Bell MT';
     font-weight:400;
     font-style:normal;
     font-size:24px;
-    color:#F2F2F2;
-    bottom:-40px;
-    padding:0px 10px;
-    z-index:1;
-    background-color:#000;
+    opacity:0.5;
     -moz-opacity:0.5;
     -webkit-opacity:0.5;
     filter:alpha(opacity=50);
@@ -295,7 +289,23 @@ html{
 .titleBox p.active{
     bottom:0px;
     }
-
+#helper {
+  position:absolute;
+  left:642px;
+  top:680px;
+  width:135px;
+  height:20px;
+  overflow:hidden;
+  text-align:left;
+  line-height:15px;
+}
+#helper span{
+  float:left;
+  height:15px;
+  width:45px;
+  overflow:hidden;
+  cursor:pointer;
+}
 #title-spirit {
   top:720px;
 }
