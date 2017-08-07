@@ -1,3 +1,57 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#title-spirit {
+  top:720px;
+}
+
+#title-left {
+  position:absolute;
+  left:372px;
+  width:200px;
+  height:1px;
+}
+
+#title-center {
+  position:absolute;
+  margin-top:-12px;
+  left:582px;
+  width:228px;
+  height:20px;
+  font-family:'CourierNewPS-BoldMT', 'Courier New Bold', 'Courier New';
+  font-weight:700;
+  font-style:normal;
+  font-size:18px;
+  color:#797979;
+}
+
+#title-right {
+  position:absolute;
+  left:820px;
+  width:200px;
+  height:1px;
+}
+
+.spirit-content{
+  position:absolute;
+  top:837px;
+  width:50px;
+  height:333px;
+  float:left;
+}
+
+.spirit-subtitle {
+  width:40px;
+  height:114px;
+}
+
+#spirit-title p {
+  font-family:'BellMT', 'Bell MT';
+  font-weight:400;
+  font-size:28px;
+}
+
+#spirit-title img {
+  width:545px;
+  height:93px;
+}

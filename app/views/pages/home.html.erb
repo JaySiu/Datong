@@ -1,54 +1,128 @@
-<center>
-           <div id="slider">
-                <img class="mainpictures" src="https://www.ocf.berkeley.edu/~datong/wp-content/uploads/2016/01/1.pic_-1024x310.png" width="1024" height="310" alt="Datong">
-           </div>
-</center>
-<script>
-   var slideIndex = 0;
-carousel();
-function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mainpictures");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > x.length) {slideIndex = 1}
-    x[slideIndex-1].style.display = "block";
-    setTimeout(carousel, 4000); // Change image every 2 seconds
-}
+    <body>
+      <div class="imageRotation"> 
+        <div class="imageBox">
+            <a href="https://www.facebook.com/DaTongSociety"><img src="images/home/photo-sample.png" /></a>
+            <a href="https://www.facebook.com/DaTongSociety"><img src="images/home/photo-sample.png" /></a>
+            <a href="https://www.facebook.com/DaTongSociety"><img src="images/home/photo-sample.png" /></a>
+        </div>
+        <div class="titleBox">
+            <p class="active">Da-tong Society of China Study in University of California, Berkeley</p>
+            <p>Da-tong Society of China Study in University of California, Berkeley test 2</p>
+            <p>Da-tong Society of China Study in University of California, Berkeley test 3</p>
+        </div>
+        <div class="icoBox">
+          <span class="active" rel="1"><img src="images/home/dot-unselected.png"></span>
+          <span rel="2"><img src="images/home/dot-unselected.png"></span>
+          <span rel="3"><img src="images/home/dot-unselected.png"></span>
+        </div>
+        <div id="helper">
+          <span><img src="images/home/dot-selected.png"></span>
+          <span><img src="images/home/dot-selected.png"></span>
+          <span><img src="images/home/dot-selected.png"></span>
+        </div>
+      </div>
+        
+      <div id="title-spirit" class="title">
+        <img id="left-line" src="images/home/line.png"/>
+        <p>[&nbsp; &nbsp; S P I R I T&nbsp; &nbsp; ]</p>
+        <img id="right-line" src="images/home/line.png"/>
+      </div>
+      
+      <div id="spirit">
+        <div id="left">
+          <img class="spirit-1" src="images/home/spirit-1-1.png"/>
+          <img class="spirit-2" src="images/home/spirit-1-2.png"/>
+          <img class="spirit-title" src="images/home/spirit-1-3.jpg"/>
+        </div>
 
-   var images = [
-       "https://upload.wikimedia.org/wikipedia/commons/a/a2/PudongSkyline-pjt.jpg",
-       "http://image.insider-journeys.com/overview/china.jpg",
-       "https://4.bp.blogspot.com/-8irF_T45mks/VGG8PnGJ2-I/AAAAAAABVVw/NddZWUZOy5c/s0/Sunset%2BNational%2BGrand%2BTheatre%2BUHD.jpg",
-       "https://upload.wikimedia.org/wikipedia/commons/e/ef/The_Forbidden_City_-_View_from_Coal_Hill.jpg"
-   ]
-   var imageHead = document.getElementById("nav-bar");
-   var i = 0;
-   setInterval(function() {
-       imageHead.style.backgroundImage = "url(" + images[i] + ")";
-       i = i + 1;
-       if (i == images.length) {
-           i =  0;
-       }
-   }, 5000);
-</script>
+        <div id="center">
+          <img class="spirit-1" src="images/home/spirit-2-1.png"/>
+          <img class="spirit-2" src="images/home/spirit-2-2.png"/>
+          <img class="spirit-title" src="images/home/spirit-2-3.jpg"/>
+        </div>
 
+        <div id="right">
+          <img class="spirit-1" src="images/home/spirit-3-1.png"/>
+          <img class="spirit-2" src="images/home/spirit-3-2.png"/>
+          <img class="spirit-title" src="images/home/spirit-3-3.jpg"/>
+        </div>
 
+        <img id="spirit-title" src="images/home/spirit-title.png"/>
+        <p id="spirit-subtitle">DA-TONG SOCIETY OF CHINA STUDIES</p>
+      </div>
 
+      <div id="title-gallary" class="title">
+        <img id="left-line" src="images/home/line.png"/>
+        <p>[&nbsp;&nbsp; G A L L E R Y&nbsp;&nbsp; ]</p>
+        <img id="right-line" src="images/home/line.png"/>
+      </div>
 
+      <div id="gallary">
+        <img id="u118" src="images/home/gallary-1.png"/>
+        <img id="u122" src="images/home/gallary-2.png"/>
+        <img id="u120" src="images/home/gallary-3.png"/>
+        <img id="u124" src="images/home/gallary-4.png"/>
+        <img id="u126" src="images/home/gallary-2.png"/>
+      </div>
 
-<div class="column-container">
-<div class="column-left"><span class="column-text"><h4>Passion:</h4><h4> 积极的学术热情，<br>无私的学术精神</h4> </span></div>
-<div class="column-center"> <span class="column-text"><h4>Integrity: </h4><h4>优良的学术品质，<br>独立的学术能力</h4></span></div>
-<div class="column-right"><span class="column-text"><h4>Open-mindedness:</h4><h4> 持重的学术态度，<br>包容的学术胸怀</h4></span></div>
-</div>
+      <div id="title-about" class="title">
+        <img id="left-line" src="images/home/line.png"/>
+        <p>[ &nbsp; A B O U T  &nbsp; U S&nbsp;  ]</p>
+        <img id="right-line" src="images/home/line.png"/>
+      </div>
 
+      <div id="about">
+        <div id="about-text">
+          <p>Da-Tong Society of China Studies at Berkeley is a cultural and academic group that aims to provide a communication and research platform for students who are interested in both historical and social issues of China and East Asia. </p><p>&nbsp;</p><p>Throughout the semester, we will lead and organize seminars, film nights, and reading sessions to discuss and analyze popular or controversial topics of China studies. We strive to utilize the knowledge and resources on campus to help students have a better understanding of culture, politics, and history of China.</p>
+        </div>
+        <img id="about-logo" src="images/home/logo.png"/>
+        <img id="about-line" src="images/home/about-line.png"/>
+      </div>
 
-<div id="bottom-bar">
+      <div id="title-follow" class="title">
+        <img id="left-line" src="images/home/line.png"/>
+        <p>[ &nbsp;F O L L O W&nbsp; U S&nbsp; ]</p>
+        <img id="right-line" src="images/home/line.png"/>
+      </div>
+
+      <div id="follow">
+        <a href="https://www.facebook.com/DaTongSociety" target="_blank"><img id="follow-1" class="follow-img" src="images/home/follow-facebook.png"/></a>
+        <a href="#wechatModal" class="modal-trigger" id="wechat"><img id="follow-2" class="follow-img" src="images/home/follow-wechat.png"/></a>
+        
+        <div id="wechatModal" class="modal modal-fixed-footer">
+          <div class="modal-content">
+            <h6>Use the WeChat app to scan the QR code!</h6>
+            <p>Official account name: 大同学社</p>
+            <%= image_tag 'datong_wechat_qr_code.jpeg' %>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect btn">Done</a>
+          </div>
+        </div>
+        
+        <a href="https://datong2017sum.herokuapp.com/" target="_blank"><img id="follow-3" class="follow-img" src="images/home/follow-website.png"/></a>
+      </div>
+
+      <div id="footer">
+        <img id="footer-line" src="images/home/line.png"/>
+
+        <p id="footer-1">Contact us:&nbsp;  web.Datong@gmail.com</p>
+        <img id="footer-4" src="images/home/footer-line.png"/>
+        <p id="footer-5" style="text-decoration:underline;"><a href="http://cs169.saas-class.org/faq/external-customer">About this website</a></p>
+        <img id="footer-6" src="images/home/footer-line.png"/>
+        <img id="footer-7" src="images/home/logo.png"/>
+        <p id="footer-8">Da-Tong Society of China Study</p>
+        <img id="footer-9" src="images/home/footer-line.png"/>
+        <p id="footer-10">Sponsored by <a href=http://ieas.berkeley.edu/ccs/>Center for Chinese Studies</a></p>
+
+      </div>
+
+    </div>
+</body>
+
+<!--<div id="bottom-bar">
     <span id="bottom-bar-text">Hosted by OCF. Sponsored by <a href=http://ieas.berkeley.edu/ccs/>Center for Chinese Studies</a></span>
-</div>
+</div>-->
 
 <!-- "../../assets/images/ShanghaiBund.jpg",
        "../../assets/images/NationalGrandTheatre.jpg",

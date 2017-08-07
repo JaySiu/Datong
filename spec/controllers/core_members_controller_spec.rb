@@ -66,6 +66,7 @@ describe CoreMembersController, type: :controller do
 
   describe "GET #index" do
     it "returns http success" do
+      sign_in(@account_admin)
       get :index
       expect(response).to have_http_status(:success)
     end
@@ -106,7 +107,16 @@ describe CoreMembersController, type: :controller do
       @user2.reload
       @user2.is_core_member.should be_falsey
     end
-    it "correctly updates one user" do
+    it "assigns event_admin" do
+      sign_in(@account_admin)
+      put :update_multiple, :event_ad => [@user1.id]
+      assigns(:event_admins).should eq(["#{@user1.id}"])
+      @user1.reload
+      @user1.is_event_admin.should be_truthy
+      @user2.reload
+      @user2.is_event_admin.should be_falsey
+    end
+    it "correctly updates one core member" do
       sign_in(@account_admin)
 
       put :update_multiple, :core_mem => [@user1.id]
@@ -115,7 +125,15 @@ describe CoreMembersController, type: :controller do
       @user2.reload
       @user2.is_core_member.should be_falsey
     end
-    it "correctly updates unchecks" do
+    it "correctly updates one event admin" do
+      sign_in(@account_admin)
+      put :update_multiple, :event_ad => [@user1.id]
+      @user1.reload
+      @user1.is_event_admin.should be_truthy
+      @user2.reload
+      @user2.is_event_admin.should be_falsey
+    end
+    it "correctly updates unchecks for core member" do
       sign_in(@account_admin)
 
       put :update_multiple, :core_mem => [@user1.id]
@@ -128,6 +146,20 @@ describe CoreMembersController, type: :controller do
       @user1.is_core_member.should be_falsey
       @user2.reload
       @user2.is_core_member.should be_falsey
+    end
+    it "correctly updates unchecks for event admin" do
+      sign_in(@account_admin)
+
+      put :update_multiple, :event_ad => [@user1.id]
+      @user1.reload
+      @user1.is_event_admin.should be_truthy
+      @user2.reload
+      @user2.is_event_admin.should be_falsey
+      put :update_multiple, :event_ad => []
+      @user1.reload
+      @user1.is_event_admin.should be_falsey
+      @user2.reload
+      @user2.is_event_admin.should be_falsey
     end
     it "redirects to index" do
       sign_in(@account_admin)

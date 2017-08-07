@@ -1,5 +1,7 @@
 <% if @event_admin %>
-    <%= link_to 'New Event', new_event_path, :class => "link_style"%>
+    <span class = "link_style">
+      <%= link_to 'Create New Event', new_event_path, class: "btn waves-effect waves-light"%>
+    </span>
 <% end %>
 <h1>Upcoming Events</h1>
 <!--display calendar-->
