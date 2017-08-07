@@ -1,21 +1,20 @@
 class ResourcesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :authenticate_core_member!, :except => [:index, :show]
+#  before_filter :authenticate_core_member!, except: [:index]
 
 
-  def authenticate_core_member!
-    if current_user.nil? or !current_user.is_core_member
-      flash[:notice] = 'You do not have access to this page.'
-      redirect_to resources_path
-    end
-  end
+#  def authenticate_core_member!
+#    if current_user.nil? or !current_user.is_core_member
+#      flash[:notice] = 'You do not have access to this page.'
+#      redirect_to resources_path
+#    end
+#  end
 
   def index
     @core_member = false
     if !current_user.nil? and current_user.is_core_member
       @core_member = true
     end
-    #debugger
     @resources = Resource.all
     render "index"
   end
