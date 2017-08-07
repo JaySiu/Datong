@@ -37,16 +37,16 @@ Scenario: visiting the events page from a different page
     When I follow Resources
     Then I should see Resources
 
-  Scenario: Signing up
-    Given I am on the home page
-    When I follow Sign Up
-    Then I should see Email
-    And I should see Password confirmation
-    And I should not see Log Out
+  # Scenario: Signing up
+  #   Given I am on the home page
+  #   When I follow Sign Up
+  #   Then I should see Email
+  #   And I should see Password confirmation
+  #   And I should not see Log Out
 
-  Scenario: Signing in
+  Scenario: Login
     Given I am on the home page
-    When I follow Sign Up
+    When I follow Login
     Then I should see Email
     And I should see Password
     And I should not see Log Out
@@ -57,10 +57,10 @@ Scenario: visiting the events page from a different page
     And I should not see Sign In
     And I should see Log Out
 
-  Scenario: seeing contact tab
-    Given I am on the people page
-    Then I should see Contact
-    And I should not see Contact Us
+  # Scenario: seeing contact tab
+  #   Given I am on the people page
+  #   Then I should see Contact
+  #   And I should not see Contact Us
 
 #  Scenario: Seeing account dropdown from homepage
 #    Given I am on the home page

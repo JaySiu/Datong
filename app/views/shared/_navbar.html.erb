@@ -14,9 +14,10 @@
             <li><%= link_to 'Resources', resources_path %></li>
         <% end %>
         <% if user_signed_in? %>
-            <li><%= link_to 'Profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
             <li><div class="navbar-non-link"><%=current_user.fname%></div></li>
+            <image src=<%=current_user.img_url%> width="30", height="30"></image>
         <% else %>
             <li><%= link_to "Login", new_user_session_path %></li>
         <% end %>

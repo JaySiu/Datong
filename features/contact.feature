@@ -6,9 +6,8 @@ Feature: When I want to contact the Da-tong group in some way
 
   Scenario: visiting the page
     Given I am on the home page
-    When I follow Contact
-    Then I should see Contact Us
-    And I should not see Facebook
+    When I see FOLLOW US
+    Then I should see Facebook
     And I should be able to see Facebook link on Contact page
     Then I follow wechat
     And I should see Official account name: 大同学社
