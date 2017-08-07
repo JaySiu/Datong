@@ -37,7 +37,7 @@ $(document).ready(function(){
             imageWidth = $(imageRotation).width(),  // img width
             imageNum = $(imageBox).children().size(),  // img num
             imageReelWidth = imageWidth*imageNum,  // img container width
-            activeID = parseInt($($(icoBox).children(".active")[0]).attr("rel")),  // current img id
+            activeID = parseInt($($(icoBox).children(".active")[0]).attr("rel"), 10),  // current img id
             nextID = 0,  // next img id
             setIntervalID,  // setInterval() function ID
             intervalTime = 4000,
@@ -72,7 +72,7 @@ $(document).ready(function(){
         );   
         $(icoArr).click(function(){
             clearInterval(setIntervalID);
-            var clickID = parseInt($(this).attr("rel"));
+            var clickID = parseInt($(this).attr("rel"), 10);
             rotate(clickID);
             setIntervalID=setInterval(rotate,intervalTime);
         });
