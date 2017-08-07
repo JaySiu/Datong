@@ -23,10 +23,10 @@ $error-color: #EED6D6;
 $danger-color: #E83B3F;
 $warning-color: #fff59d;
 $success-color: #D8EECF;
-$sidenav-font-size: 2em !default;
-$sidenav-padding: 16px !default;
+//$sidenav-font-size: 2em !default;
+//$sidenav-padding: 16px !default;
 //$sidenav-item-height: 48px !default;
-$sidenav-item-height: 2em !default;
+//$sidenav-item-height: 2em !default;
 
 
 @import 'materialize';
@@ -36,7 +36,6 @@ nav {
   @media only screen and (min-width: 0) {
     height: 120px;
   }
-
 }
 
 h1 {
@@ -74,7 +73,7 @@ h2 {
 #sub-title {
   position:absolute;
   left:40px;
-  top:64px;
+  top:54px;
   width:302px;
   height:12px;
   font-family:'EngraversMT', 'Engravers MT';
@@ -108,21 +107,6 @@ h2 {
   width:500px;
 }
 
-html{
-  line-height: 1.5;
-
-  @media only screen and (min-width: 0) {
-    font-size: 2em;
-  }
-
-  @media only screen and (min-width: $medium-screen) {
-    font-size: 1em;
-  }
-
-  @media only screen and (min-width: $large-screen) {
-    font-size: .8em;
-  }
-}
 .alert {
   border-radius: 3px;
   padding: 1em;

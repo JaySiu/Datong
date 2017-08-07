@@ -1,9 +1,9 @@
 <nav id="nav-bar">
 
   <div class="nav-wrapper">
-    <%= link_to 'Datong', root_path, class: 'brand-logo' %>
+    <%= link_to 'DA-TONG SOCIETY', root_path, id: 'title' %>
+    <%= link_to 'University of California, Berkeley', "http://www.berkeley.edu/", id: 'sub-title' %>
     <div><a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a></div>
-    <div><p id="title">DA-TONG SOCIETY</p><p id="sub-title">University of California, Berkeley</p></div>
     
     <div class="nav-pages">
       <ul id="mobile-menu" class="side-nav">
@@ -14,10 +14,9 @@
             <li><%= link_to 'Resources', resources_path %></li>
         <% end %>
         <% if user_signed_in? %>
-            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li><%= link_to 'Profile', edit_user_registration_path %></li>
             <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-            <li><div class="navbar-non-link">Hello <strong><%=current_user.fname%></strong></div></li>
-            <image src=<%=current_user.img_url%> width="60", height="60"></image>
+            <li><div class="navbar-non-link"><%=current_user.fname%></div></li>
         <% else %>
             <li><%= link_to "Login", new_user_session_path %></li>
         <% end %>
