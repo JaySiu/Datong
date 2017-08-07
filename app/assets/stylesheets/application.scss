@@ -209,10 +209,11 @@ html{
   float: right;
 }
 .imageRotation{
-  position: relative;
+  position: absolute;
+  left:0px;
   width:1410px;
-  height:530px;
-  position:relative;
+  height:630px;
+  overflow:hidden;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
 }
@@ -255,7 +256,7 @@ html{
 }
 .titleBox{
     position:absolute;  
-    bottom:0px;
+    top:470px;
     width:1410px;
     height:60px;
     overflow:hidden;
@@ -292,7 +293,7 @@ html{
 #helper {
   position:absolute;
   left:642px;
-  top:680px;
+  top:570px;
   width:135px;
   height:20px;
   overflow:hidden;
