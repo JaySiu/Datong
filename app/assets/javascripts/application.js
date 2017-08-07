@@ -48,13 +48,13 @@ $(document).ready(function(){
         // img container function
         var rotate=function(clickID){
             if(clickID){ nextID = clickID; }
-            else{ nextID=activeID<=3 ? activeID+1 : 1; }
+            else{ nextID=activeID< imageNum ? activeID+1 : 1; }
             // change icon
             $(icoArr[activeID-1]).removeClass("active");
             $(icoArr[nextID-1]).addClass("active");
             // change title
             $(titleArr[activeID-1]).animate(
-                {bottom:"-40px"},
+                {bottom:"-60px"},
                 titleSpeed,
                 function(){
                     $(titleArr[nextID-1]).animate({bottom:"0px"} , titleSpeed);

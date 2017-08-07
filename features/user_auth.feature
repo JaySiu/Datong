@@ -4,22 +4,21 @@ Feature: User Authentication with Devise
   I should be able to sign up for an account or sign into an account that
   already exists
 
-  Scenario: Seeing Sign Up/Sign In buttons
+  Scenario: Seeing Login In buttons
     Given I am on the home page
-    Then I should see Sign Up
-    And I should see Sign In
+    Then I should see Login
     And I should not see Log Out
 
   Scenario: Seeing a Log Out button
     Given I am logged in
     Then I should see Log Out
-    And I should not see Sign Up
-    And I should not see Sign In
+    And I should not see Login
 
   Scenario: Signing up for an account
     Given I am on the home page
-    And I should see Sign Up
-    When I follow Sign Up
+    And I should see Login
+    When I follow Login
+    Then I follow Sign up
     Then I should see Sign up for Datong
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
@@ -32,7 +31,8 @@ Feature: User Authentication with Devise
   Scenario: Signing up with existing email
     Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
     And I am on the home page
-    And I follow Sign Up
+    Then I follow Login
+    Then I follow Sign up
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
@@ -42,7 +42,7 @@ Feature: User Authentication with Devise
   Scenario: Signing in to an existing account without confirmation
     Given I have an account for datongtest@datong.berkeley.edu without confirming
     And I am on the home page
-    And I follow Sign In
+    And I follow Login
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I press "Log in"
@@ -51,7 +51,7 @@ Feature: User Authentication with Devise
   Scenario: Signing in to an existing account with confirmation
     Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
     And I am on the home page
-    And I follow Sign In
+    And I follow Login
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I press "Log in"
@@ -61,7 +61,7 @@ Feature: User Authentication with Devise
   Scenario: Signing in with an incorrect password
     Given I have an account for datongtest@datong.berkeley.edu and confirmed my email
     And I am on the home page
-    When I follow Sign In
+    When I follow Login
     And I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2wrong"
     And I press "Log in"
@@ -69,7 +69,7 @@ Feature: User Authentication with Devise
 
   Scenario: Signing in with a nonexisting email
     Given I am on the home page
-    And I follow Sign In
+    And I follow Login
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I press "Log in"
@@ -78,13 +78,13 @@ Feature: User Authentication with Devise
   Scenario: Signing out
     Given I am logged in
     And I follow Log Out
-    Then I should see Sign Up
-    And I should see Sign In
+    Then I should see Login
     And I should see Signed out successfully.
 
   Scenario: Creating an account with a Berkeley email
     Given I am on the home page
-    And I follow Sign Up
+    Then I follow Login
+    Then I follow Sign up
     When I fill in "user_email" with "datongtest@datong.berkeley.edu"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
@@ -95,7 +95,8 @@ Feature: User Authentication with Devise
 
   Scenario: Creating an account with a non-Berkeley email
     Given I am on the home page
-    And I follow Sign Up
+    Then I follow Login
+    Then I follow Sign up
     When I fill in "user_email" with "datongtest@sdfsdf.com"
     And I fill in "user_password" with "hunter2"
     And I fill in "user_password_confirmation" with "hunter2"
