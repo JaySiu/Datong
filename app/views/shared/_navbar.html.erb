@@ -1,43 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Home</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <link href="styles.css" type="text/css" rel="stylesheet"/>
-    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
-    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
-    </script>
-  </head>
-  <body>
-    <nav id="nav-bar">
-      <div id="base" class="nav-wrapper">
-        <div id="header">
-          <p id="header-title"><%= link_to 'DA-TONG SOCIETY', root_path, class: 'brand-logo' %></p>
-          <p id="header-subtitle">University of California, Berkeley</p>
-          <div><a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a></div>
-          <div id="nav">
-            <p><%= link_to 'About Us', about_us_path %></p>
-            <p><%= link_to 'Contact', contact_us_path %></p>
-            <p><%= link_to 'People', core_members_index_path %></p>
-            <% if user_signed_in? %>
-                <p><%= link_to 'Resources', resources_path %></p>
-            <% end %>
-            <p><%= link_to 'Events', events_path %></p>
-            <% if user_signed_in? %>
-                <p><%= link_to 'Edit profile', edit_user_registration_path %></p>
-                <p><%= link_to "Log Out", destroy_user_session_path, method: :delete %></p>
-                <p><div class="navbar-non-link">Hello <strong><%=current_user.fname%></strong></div></p>
-                <image src=<%=current_user.img_url%> width="60", height="60"></image>
-            <% else %>
-                <p><%= link_to "Sign Up", new_user_registration_path %></p>
-                <p><%= link_to "Sign In", new_user_session_path %></p>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <div class="vertical-center"><center><h1 style="margin-top: 0px"> 大同学社</h1><h1> Da-Tong Society of China Studies</h1></center></div>
-    </nav>
-  </body>
-</html>
+<nav id="nav-bar">
+
+  <div class="nav-wrapper">
+    <%= link_to 'DA-TONG SOCIETY', root_path, id: 'title' %>
+    <%= link_to 'University of California, Berkeley', "http://www.berkeley.edu/", id: 'sub-title' %>
+    <div><a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a></div>
+    
+    <div class="nav-pages">
+      <ul id="mobile-menu" class="side-nav">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Events', events_path %></li>
+        <li><%= link_to 'People', core_members_index_path %></li>
+        <% if user_signed_in? %>
+            <li><%= link_to 'Resources', resources_path %></li>
+        <% end %>
+        <% if user_signed_in? %>
+            <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <li><div class="navbar-non-link"><%=current_user.fname%></div></li>
+            <image src=<%=current_user.img_url%> width="30", height="30"></image>
+        <% else %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</nav>
