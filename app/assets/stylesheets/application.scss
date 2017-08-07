@@ -678,3 +678,52 @@ body {
   left:952px;
   width:260px;
 }
+
+body {
+  margin:0px;
+  background-color:rgba(244, 243, 239, 1);
+  background-image:none;
+  position:relative;
+  left:-0px;
+  width:1414px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+}
+#header-title {
+  position:absolute;
+  left:40px;
+  top:10px;
+  width:290px;
+  height:34px;
+  font-family:'Baskerville-SemiBold', 'Baskerville SemiBold', 'Baskerville';
+  font-weight:650;
+  font-style:normal;
+  font-size:30px;
+}
+#header-subtitle {
+  position:absolute;
+  left:40px;
+  top:64px;
+  width:302px;
+  height:12px;
+  font-family:'EngraversMT', 'Engravers MT';
+  font-weight:400;
+  font-style:normal;
+  font-size:11px;
+}
+#nav p{
+  position: relative;
+  top: 50px;
+  height:26px;
+  width: 100px;
+  font-family:'BellMT', 'Bell MT';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  color:#999999;
+  float: right;
+}
+#nav p:hover{
+  color: #666666;
+}
