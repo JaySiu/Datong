@@ -45,13 +45,14 @@ Scenario: account admin cannot update their profile picture
   And I should see Edit User
   And I should see Cancel my account
   And I should not see "Img url"
+  
+Scenario: admin can update their profile picture
+  Given I am on the home page
+  And I am a admin
+  And I am logged in
+  Then I should see Edit profile
 
 Scenario: visitors cannot update their profile picture
   Given I am on the home page
   And I am a visitor
   Then I should not see Edit profile
-  
-Scenario: admin can update their profile picture
-  Given I am on the home page
-  And I am a admin
-  Then I should see Edit profile

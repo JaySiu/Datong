@@ -6,7 +6,7 @@ Feature: Password reset
 
 Scenario: seeing the password recovery option
   Given I am on the home page
-  And I follow Sign In
+  And I follow Login
   Then I should see Forgot your password?
 
 Scenario: Recovering a password with an existing email account

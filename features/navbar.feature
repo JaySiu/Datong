@@ -10,16 +10,8 @@ Feature: When I visit a page with a navbar, the links should be clickable and le
 
   Scenario: visiting the home page from the people page
     Given I am on the people page
-    When I follow Datong
-    Then I should see Hosted by OCF
-    And I should see Sponsor
-    And I should see Passion
-    And I should see 积极的学术热情，无私的学术精神
-    And I should see Integrity
-    And I should see 优良的学术品质，独立的学术能力
-    And I should see Open-mindedness
-    And I should see 持重的学术态度，包容的学术胸怀
-    And I should not see Core Members
+    When I follow Home
+    Then I should not see Core Members
 
 Scenario: visiting the events page from a different page
   Given I am on the people page
