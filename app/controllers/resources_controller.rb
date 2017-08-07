@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :authenticate_core_member!, except: [ :index]
+  before_filter :authenticate_core_member!, except: [ :index, :show]
 
   def authenticate_core_member!
     if current_user.nil? or !current_user.is_core_member
