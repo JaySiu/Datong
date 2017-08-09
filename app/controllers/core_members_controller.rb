@@ -16,8 +16,8 @@ class CoreMembersController < ApplicationController
       @is_account_admin = true
     end
     @core_members = User.where(is_core_member: true).where(is_account_admin: false).to_a
-    @admins = User.where(is_account_admin: true).to_a
-    @core_members = (@admins << @core_members).flatten!
+    #@admins = User.where(is_account_admin: true).to_a
+    #@core_members = (@admins << @core_members).flatten!
   end
 
   def edit_multiple
