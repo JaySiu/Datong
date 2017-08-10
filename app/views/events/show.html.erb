@@ -1,26 +1,38 @@
+<div>
+  <span class="link_style">
+    <%= link_to 'Edit', edit_event_path(@event), class: "btn waves-effect waves-light" %>
+    <%= link_to 'Back', events_path, class: "btn waves-effect waves-light" %>
+  </span>
+  <h1>Event</h1>
+</div>
+
+<div class="wrap_event_day_content">
+  <h1 style="margin-bottom: 0;">
+    <% if ((@start_month!=@end_month) && (@start_date!=@end_date)) %>
+        <%= @start_month %>/<%= @start_date %> - <%= @end_month %>/<%= @end_date %>
+    <% else %>
+        <%= @start_month %>/<%= @start_date %>
+    <% end %>
+  </h1>
+  <p style="margin-top: 10px;"><%= @year %></p>
+</div>
+<div class="wrap_event_time_content">
+  <h1 style="margin-bottom: 0;"><%= @event.title %></h1>
+  <p style="margin-top: 10px;"><%= @start_time %> - <%= @end_time %></p>
+</div>
+
+<br  style="clear: both">
 <br>
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
+<br>
+
+
+<h1><%= @event.title %></h1>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @event.start_time %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @event.end_time %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @event.description %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+
 
 <br>
 <br>
