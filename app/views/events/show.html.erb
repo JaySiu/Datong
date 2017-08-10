@@ -3,9 +3,25 @@
     <%= link_to 'Edit', edit_event_path(@event), class: "btn waves-effect waves-light" %>
     <%= link_to 'Back', events_path, class: "btn waves-effect waves-light" %>
   </span>
-  <h1>Event</h1>
+  <h1>Event - <%= @event.title %></h1>
 </div>
 
+<p>
+  <strong>Start time:</strong>
+  <%= @event.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @event.end_time %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<% if false %>
 <div class="wrap_event_day_content">
   <h1 style="margin-bottom: 0;">
     <% if @start_month!=@end_month || @start_date!=@end_date %>
@@ -32,7 +48,7 @@
   <%= @event.description %>
 </p>
 
-
+<% end %>
 
 <br>
 <br>

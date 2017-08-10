@@ -24,17 +24,17 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    start = @event.start_time.to_s.split(" ")
-    ending = @event.end_time.to_s.split(" ")
-    @year = start[0].split("-")[0]
-    @start_month = start[0].split("-")[1]
-    @start_date = start[0].split("-")[2]
-    @end_month = ending[0].split("-")[1]
-    @end_date = ending[0].split("-")[2]
-    time = start[1].split(":")
-    @start_time = (time[0]+":"+time[1])
-    time = ending[1].split(":")
-    @end_time = (time[0]+":"+time[1])
+    #start = @event.start_time.to_s.split(" ")
+    #ending = @event.end_time.to_s.split(" ")
+    #@year = start[0].split("-")[0]
+    #@start_month = start[0].split("-")[1]
+    #@start_date = start[0].split("-")[2]
+    #@end_month = ending[0].split("-")[1]
+    #@end_date = ending[0].split("-")[2]
+    #time = start[1].split(":")
+    #@start_time = (time[0]+":"+time[1])
+    #time = ending[1].split(":")
+    #@end_time = (time[0]+":"+time[1])
   end
 
   # GET /events/new
