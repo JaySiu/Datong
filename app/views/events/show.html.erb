@@ -8,8 +8,8 @@
 
 <div class="wrap_event_day_content">
   <h1 style="margin-bottom: 0;">
-    <% if ((@start_month!=@end_month) && (@start_date!=@end_date)) %>
-        <%= @start_month %>/<%= @start_date %> - <%= @end_month %>/<%= @end_date %>
+    <% if @start_month!=@end_month || @start_date!=@end_date %>
+        <%= @start_month %>/<%= @start_date %>  -  <%= @end_month %>/<%= @end_date %>
     <% else %>
         <%= @start_month %>/<%= @start_date %>
     <% end %>
@@ -18,7 +18,7 @@
 </div>
 <div class="wrap_event_time_content">
   <h1 style="margin-bottom: 0;"><%= @event.title %></h1>
-  <p style="margin-top: 10px;"><%= @start_time %> - <%= @end_time %></p>
+  <p style="margin-top: 10px;"><%= @start_time %>  -  <%= @end_time %></p>
 </div>
 
 <br  style="clear: both">
@@ -28,7 +28,7 @@
 
 <h1><%= @event.title %></h1>
 
-<p>
+<p style="text-indent: 20px">
   <%= @event.description %>
 </p>
 

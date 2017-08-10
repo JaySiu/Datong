@@ -1,9 +1,13 @@
-<h1>Editing Event</h1>
+<div>
+  <span class="link_style">
+    <%= link_to 'Show', @event, class: "btn waves-effect waves-light"  %>
+    <%= link_to 'Back', events_path, class: "btn waves-effect waves-light"  %>
+  </span>
+  <h1>Editing Event</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
 
 <br>
 <br>
